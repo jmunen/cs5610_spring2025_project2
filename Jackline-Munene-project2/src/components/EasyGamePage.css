@@ -1,0 +1,158 @@
+.easy-game-page {
+    min-height: 100vh;
+    background-color: #1a1a2e;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.easy-game-page .game-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.easy-game-page .game-title {
+    font-family: "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+    font-size: clamp(28px, 5vw, 48px);
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    margin: 0;
+}
+
+.easy-game-page .hud {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.easy-game-page .timer{
+    font-family: monospace;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border: 2px solid #ff00ff;
+    border-radius: 8px;
+    color: #ff00ff;
+    text-shadow: 0 0 8px #ff00ff;
+    background-color:rgba(255, 0, 255, 0.1);
+}
+
+.easy-game-page .board{
+    display: grid;
+    grid-template-columns: repeat(6, 50px);
+    grid-template-rows: repeat(6, 50px);
+    border: 3px solid #ff00ff;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+    background-color: #1a1a2e;
+}
+
+.easy-game-page .board .cell{
+    width: 50px;
+    height: 50px;
+    border: 1px solid #444;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #00ffff;
+    outline: none;
+    background-color: #1a1a2e;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 0;
+}
+.easy-game-page .board .cell:focus {
+    background-color: rgba(0, 255, 255, 0.2);
+    box-shadow: inset 0 0 8px #00ffff;}
+
+/* sub-grid borders for 6x6 (2x3 boxes) */
+
+.easy-game-page .board .cell:nth-child(6n+3) {
+    border-right: 3px solid #ff00ff;
+}
+
+.easy-game-page .board .cell:nth-child(n+13):nth-child(-n+18) {
+    border-top: 3px solid #ff00ff;
+}
+
+.easy-game-page .board .cell:nth-child(n+25):nth-child(-n+30) {
+    border-top: 3px solid #ff00ff;
+}
+
+.easy-game-page .game-actions {
+    margin-top: 24px;
+    display: flex;
+    gap: 16px;
+}
+
+.easy-game-page .btn {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border-radius: 999px;
+    border: 2px solid;
+    cursor: pointer;
+    transition: transform 0.02s ease, box-shadow 0.15s ease;
+}
+
+.easy-game-page .btn-active {
+    transform: translateY(1px);
+}
+
+.easy-game-page .btn-new{
+    background-color: #00ffff;
+    border-color: #00ffff;
+    color: #1a1a2e;
+}
+
+.easy-game-page .btn-new:hover {
+    box-shadow: 0 0 15px #00ffff;
+}
+
+.easy-game-page .btn-reset {
+    background-color: transparent;
+    border-color: #ff00ff;
+    color: #ff00ff;
+}
+
+.easy-game-page .btn-reset:hover{
+    box-shadow: 0 0 15px #ff00ff;
+    background-color: rgba(255, 0, 255, 0.1);
+}
+
+.easy-game-page .board .cell.invalid {
+    border: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.easy-game-page .win-message {
+    margin-top: 20px;
+    padding: 16px 24px;
+    background-color: rgba(0, 255, 0, 0.2);
+    border: 2px solid #00ff00;
+    border-radius: 8px;
+    color: #00ff00;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+.easy-game-page .board .cell.prefilled {
+    color: #ff00ff;
+    font-weight: bold;
+}
+
+@media(max-width: 480px){
+    .easy-game-page .board{
+        grid-template-columns: repeat(6, 40px);
+        grid-template-rows: repeat(6, 40px);
+    }
+
+    .easy-game-page .board .cell {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}

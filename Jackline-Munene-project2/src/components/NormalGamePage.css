@@ -1,0 +1,157 @@
+.normal-game-page {
+    min-height: 100vh;
+    background-color: #1e1e1e;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.normal-game-page .game-header{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.normal-game-page .game-title {
+    font-family: "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+    font-size: clamp(28px, 5vw, 48px);
+    color: #ff9f00;
+    text-shadow: 0 0 10px #ff9f00, 0 0 20px #ff9f00;
+    margin: 0px;
+}
+
+.normal-game-page .hud {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.normal-game-page .timer {
+    font-family: monospace;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border: 2px solid #ff9f00;
+    border-radius: 8px;
+    color: #ff9f00;
+    text-shadow: 0 0 8px #ff9f00;
+    background-color: rgba(255, 159, 0, 0.1);
+}
+
+.normal-game-page .board {
+    display: grid;
+    grid-template-columns: repeat(9, 45px);
+    grid-template-rows: repeat(9, 45px);
+    gap: 0;
+    border: 3px solid #ff9f00;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 159, 0, 0.3);
+    background-color: #1e1e2e;
+}
+
+.normal-game-page .board .cell {
+    width: 45px;
+    height: 45px;
+    border: 1px solid #444;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #00ffff;
+    outline: none;
+    background-color: #1e1e2e;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 0;
+}
+
+.normal-game-page .board .cell:focus {
+    background-color: rgba(0, 255, 255, 0.2);
+    box-shadow: inset 0 0 8px #00ffff;
+}
+
+/* Sub-grid borders for 9x9 (3x3 boxes) */
+/* Vertical lines after colums 3 and 6 */
+.normal-game-page .board .cell:nth-child(9n+3),
+.normal-game-page .board .cell:nth-child(9n+6) {
+    border-right: 3px solid #ff9f00;
+}
+
+.normal-game-page .board .cell:nth-child(n+19):nth-child(-n+27) {
+    border-bottom: 3px solid #ff9f00;
+}
+
+.normal-game-page .board .cell:nth-child(n+46):nth-child(-n+54) {
+    border-bottom: 3px solid #ff9f00;
+}
+
+.normal-game-page .game-actions {
+    margin-top: 24px;
+    display: flex;
+    gap: 16px;
+}
+
+.normal-game-page .btn {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border-radius: 999px;
+    border: 2px solid;
+    cursor: pointer;
+    transition: transform 0.02s ease, box-shadow 0.15s ease;
+}
+
+.normal-game-page .btn-new {
+    background-color: #ff9f00;
+    border-color: #ff9f00;
+    color: #1a1a2e;
+}
+
+.normal-game-page .btn-new:hover{
+    box-shadow: 0 0 15px #ff9f00;
+}
+
+.normal-game-page .btn-reset {
+    background-color: transparent;
+    border-color: #00ffff;
+    color: #00ffff;
+}
+
+.normal-game-page .btn-reset:hover {
+    box-shadow: 0 0 15px #00ffff;
+    background-color: rgba(255, 159, 0, 0.1);
+}
+
+.normal-game-page .board .cell.invalid {
+    border: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.normal-game-page .win-message {
+    margin-top: 20px;
+    padding: 16px 24px;
+    background-color: rgba(0, 255, 0, 0.2);
+    border: 2px solid #00ff00;
+    border-radius: 8px;
+    color: #00ff00;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+.normal-game-page .board .cell.prefilled {
+    color: #ff9f00;
+    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+    .normal-game-page .board {
+        grid-template-columns: repeat(9, 35px);
+        grid-template-rows: repeat(9, 35px);
+    }
+    .normal-game-page .board .cell {
+        width: 35px;
+        height: 35px;
+        font-size: 1.1rem;
+    }
+}

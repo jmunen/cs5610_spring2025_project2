@@ -1,0 +1,71 @@
+.pageheader{
+    text-align: center;
+    padding: clamp(20px, 4vw, 48px) 16px 0;
+}
+#heading{
+    text-align: center;
+    font-family: "playfair Display", Georgia, Times, serif;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    font-size: clamp(36px, 6vw, 64px);
+    color: var(--coral);
+    margin: 0;
+    color:rgb(236, 132, 91);
+}
+.container{
+    background-color: var(--paper);
+    padding: clamp(16px, 3vw, 28px) clamp(18px, 4vw, 40px);
+    border: 2px var(--paper-edge);
+    border-radius: 14px;
+    box-shadow: 0 1px 0 #fff inset,
+                0 8px 24px rgb(0,0,0,0.08);
+    margin: 0 auto clamp(24px, 5vw, 48px);
+    max-width: 920px;
+   
+}
+.btn{
+    font: inherit;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.02s ease, box-shadow 0.15 ease, background-color 0.2s ease;
+}
+.visuallyhidden{
+    position:absolute;
+    height: 1px; width: 2px;
+    overflow: hidden; clip: rect(1px 1px 1px 1px);
+    white-space: nowrap;
+}
+
+.home{
+    text-decoration: none;
+    text-align: center;
+}
+
+.select{
+    counter-reset: rule;
+    list-style:decimal;
+    font-size: clamp(18px, 2.6vw, 28px);
+    margin: 0;
+    padding: left 1.2em;
+    
+}
+.select li{
+    margin:10px 0 12px;
+}
+.select li::marker{
+    color:var(--coral);
+    font-weight:800;
+
+}
+
+.select strong{
+    font-weight: 700;
+}
+
+@media(max-width:520px){
+    .container{padding: 14px 16px}
+}

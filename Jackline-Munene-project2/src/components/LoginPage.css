@@ -1,0 +1,112 @@
+.pageheader{
+    text-align: center;
+    padding: clamp(20px, 4vw, 48px) 16px 0;
+}
+
+.heading{
+    font-family: "playfair Display", Georgia, serif;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    font-size: clamp(36px, 6vw, 64px);
+    color: var(--coral);
+    margin: 0;
+}
+.subheading{
+    margin: 8px auto 24px;
+    max-width: 52ch;
+    opacity: .85;
+}
+.container{
+    background-color: var(--paper);
+    padding: clamp(16px, 3vw, 28px) clamp(18px, 4vw, 40px);
+    border: 2px solid var(--paper-edge);
+    border-radius: 14px;
+    box-shadow: 0 1px 0 #fff inset,
+                0 8px 24px rgba(0,0,0,.08);
+    margin: 0 auto clamp(24px, 5vw, 48px);
+    max-width: 920px;
+}
+
+.login-form{
+    display: grid;
+    gap: 18px;
+}
+.form-row{
+    display: grid;
+    gap: 8px;
+}
+label{
+    font-weight: 600;
+    font-size: 0.98rem;
+}
+.help{
+    font-size: 0.85rem;
+    opacity: .8;
+}
+input[type="text"],
+input[name="password"]{
+    appearance: none;
+    width: 100%;
+    font: inherit;
+    padding: 12px 14px;
+    border: 2px solid var(--paper-edge);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--paper-ink);
+    outline: none;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+input::placeholder{
+    opacity: .6;
+}
+
+input:focus{
+    border-color: var(--coral);
+    box-shadow: 0 0 0 3px rgba(200, 106, 82, .18);
+
+}
+
+.actions{
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 4px;
+}
+.btn{
+    font: inherit;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform .02s ease, box-shadow .15s ease, background-color .2s ease;
+}
+.btn:active{
+    transform: translateY(1px);
+}
+.btn-primary{
+    background: var(--coral);
+    color: #fff;
+    border-color: var(--coral);
+    box-shadow: 0 4px 14px rgba(200, 106, 82, .25);
+}
+.btn-primary:hover{ 
+    filter: brightness(1.13);
+}
+.btn-secondary{
+    background: #fff;
+    color: var(--paper-ink);
+    border-color: var(--paper-edge);
+}
+.btn-secondary:hover{
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+}
+@media(max-width:520px){
+    .container{
+        padding:14px 16px;
+    }
+    .actions{
+        flex-direction: column;
+    }
+
+}
+
